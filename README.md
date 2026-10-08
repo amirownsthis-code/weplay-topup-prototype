@@ -121,3 +121,26 @@ Some pages/configuration reference `globe_icon.png`, while the main page referen
 This AI-assisted frontend practice project recreates a reference interface and explores an experimental profile lookup. It is presented as a prototype rather than a production payment service or an original WePlay design.
 
 Author: [Muhammad Amir](https://github.com/amirownsthis-code), Data Science student at UET Main Campus Lahore.
+
+## Screenshots
+
+### Homepage
+![WePlay prototype homepage](docs/screenshots/homepage.png)
+
+### Profile lookup
+![Player ID search](docs/screenshots/id-search.png)
+
+### Profile lookup result
+![Retrieved player profile](docs/screenshots/id-found.png)
+
+### Payment method selection
+![Demo payment methods](docs/screenshots/payment-method.png)
+
+### Demo checkout
+![Simulated checkout form](docs/screenshots/checkout.png)
+
+### Simulated success receipt
+![Demo transaction receipt](docs/screenshots/payment-successful.png)
+
+Checkout and receipt screens demonstrate a simulated flow.
+No real payment is processed or game currency delivered.
