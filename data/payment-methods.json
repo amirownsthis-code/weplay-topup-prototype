@@ -1,0 +1,29 @@
+{
+  "title": "Stored Value Pipeline",
+  "methods": [
+    {
+      "id": "visa",
+      "name": "VISA",
+      "icon": "assets/images/visa-card.png",
+      "selected": true
+    },
+    {
+      "id": "mastercard",
+      "name": "mastercard",
+      "icon": "assets/images/mastercard.png",
+      "selected": false
+    },
+    {
+      "id": "apple-pay",
+      "name": "Apple Pay",
+      "icon": "assets/images/apple-card.png",
+      "selected": false
+    },
+    {
+      "id": "google-pay",
+      "name": "Google Pay",
+      "icon": "assets/images/google pay.png",
+      "selected": false
+    }
+  ]
+}

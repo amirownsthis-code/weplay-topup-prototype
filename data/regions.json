@@ -1,0 +1,11 @@
+{
+  "selected": "Macao",
+  "regions": [
+    { "code": "TW", "name": "Taiwan" },
+    { "code": "HK", "name": "Hongkong" },
+    { "code": "MY", "name": "Malaysia" },
+    { "code": "SG", "name": "Singapore" },
+    { "code": "PK", "name": "Pakistan" },
+    { "code": "MO", "name": "Macao", "default": true }
+  ]
+}

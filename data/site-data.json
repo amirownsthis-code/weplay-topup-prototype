@@ -1,0 +1,67 @@
+{
+  "user": {
+    "name": "Wu Chen",
+    "id": "wuchen",
+    "avatar": "patrick"
+  },
+  "header": {
+    "navLinks": [
+      { "title": "about Us", "url": "#about" },
+      { "title": "Contribute songs", "url": "#songs" },
+      { "title": "Media Information", "url": "#media", "hasDropdown": true },
+      { "title": "Protection of minors", "url": "#minors" }
+    ],
+    "globeIcon": "assets/images/globe_icon.png",
+    "selectedRegion": "Macao"
+  },
+  "leftNavigation": [
+    {
+      "id": "stored-gold-coins",
+      "title": "Stored Gold Coins",
+      "active": true
+    },
+    {
+      "id": "become-member",
+      "title": "Become a member",
+      "active": false
+    },
+    {
+      "id": "purchase-red-envelopes",
+      "title": "Purchase red envelopes",
+      "active": false
+    },
+    {
+      "id": "game-card-upgrade-advance",
+      "title": "Game Card Upgrade",
+      "active": false
+    },
+    {
+      "id": "game-card-upgrade-deluxe",
+      "title": "Game Card Upgrade",
+      "active": false
+    }
+  ],
+  "banners": [
+    {
+      "id": "bar-1",
+      "image": "assets/images/bar-1.png",
+      "alt": "Special Promotion 1"
+    },
+    {
+      "id": "bar-2",
+      "image": "assets/images/bar-2.webp",
+      "alt": "Special Promotion 2"
+    }
+  ],
+  "giftPack": {
+    "icon": "assets/images/gift-box.png",
+    "hours": 95,
+    "minutes": 22,
+    "seconds": 46
+  },
+  "footer": {
+    "copyright": "Copyright © 2021 WEJOY PTE. LTD. All Rights Reserved.",
+    "legalLink": "Legal documents",
+    "legalUrl": "#legal"
+  }
+}

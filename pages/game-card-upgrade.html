@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WePlay - Game Card Upgrade</title>
+  <link rel="icon" type="image/png" href="../assets/images/logo.png">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="g-header">
+    <nav class="container fx-row fx-c-center transparent">
+      <div class="logo fx-row fx-c-center" onclick="window.location.href='../index.html'">
+        <img src="../assets/images/logo.png" alt="WePlay Icon" class="logo-icon">
+        <img src="../assets/images/weplay-name.png" alt="WePlay Logo" class="logo-text">
+      </div>
+      <div class="menus fx-1 fx-row fx-c-center">
+        <a href="#about" class="menu-item">about Us</a>
+        <a href="#contribute" class="menu-item">Contribute songs</a>
+        <div class="menu-item dropdown">
+          <span>Media Information</span>
+          <svg class="dropdown-icon" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </div>
+        <a href="#minors" class="menu-item">Protection of minors</a>
+      </div>
+      <div class="actions fx-row fx-c-center">
+        <div class="region-btn-wrapper">
+          <button class="region-btn" type="button">
+            <img src="../assets/images/globe_icon.png" alt="Globe" class="globe-icon-img">
+            <span>Macao</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="recharge" class="main">
+    <div class="recharge-wrapper">
+      <aside class="left card" id="leftCard">
+        <div class="user-profile">
+          <div class="user-avatar-wrap">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="60" r="60" fill="#ff8fa3" />
+              <path d="M 60 14 C 52 32 38 68 38 88 C 38 106 82 106 82 88 C 82 68 68 32 60 14 Z" fill="#ff768e" />
+              <ellipse cx="53" cy="50" rx="6.5" ry="9.5" fill="#ffffff" stroke="#222" stroke-width="1.6" />
+              <ellipse cx="67" cy="50" rx="6.5" ry="9.5" fill="#ffffff" stroke="#222" stroke-width="1.6" />
+              <ellipse cx="54" cy="51" rx="3" ry="4" fill="#111" />
+              <ellipse cx="66" cy="51" rx="3" ry="4" fill="#111" />
+              <path d="M 47 38 Q 52 35 56 39" fill="none" stroke="#601826" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M 64 39 Q 68 35 73 38" fill="none" stroke="#601826" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M 48 68 Q 60 84 72 68 Z" fill="#6d1b2a" stroke="#222" stroke-width="1.5" />
+              <ellipse cx="60" cy="74" rx="7" ry="4" fill="#ff5277" />
+            </svg>
+          </div>
+          <div class="user-info">
+            <div class="user-name-row">
+              <span class="user-name">Wu Chen</span>
+              <button class="switch-account-btn">⇄</button>
+            </div>
+            <div class="user-id">ID: wuchen</div>
+          </div>
+        </div>
+
+        <nav class="left-nav-menu">
+          <a href="../index.html" class="nav-page-btn">Stored Gold Coins</a>
+          <a href="become-member.html" class="nav-page-btn">Become a member</a>
+          <a href="purchase-red-envelopes.html" class="nav-page-btn">Purchase red envelopes</a>
+          <a href="game-card-upgrade.html" class="nav-page-btn active">Game Card Upgrade</a>
+        </nav>
+      </aside>
+
+      <section class="right card" id="rightCard">
+        <div class="view-header">
+          <h2>Game Card Upgrade</h2>
+          <p>Upgrade battle pass cards for premium seasonal perks and badges.</p>
+        </div>
+        <div class="placeholder-grid">
+          <div class="placeholder-card">
+            <img src="../assets/images/game-card-advance-version.png" class="placeholder-icon" alt="Advance Card">
+            <div class="placeholder-info">
+              <h4>Advance Game Card Upgrade</h4>
+              <p>Unlock advanced game pass rewards, premium card back and level boosters!</p>
+              <div class="price-tag">$14.99</div>
+            </div>
+          </div>
+          <div class="placeholder-card">
+            <img src="../assets/images/game-card-dulex-version.png" class="placeholder-icon" alt="Deluxe Card">
+            <div class="placeholder-info">
+              <h4>Deluxe Game Card Upgrade</h4>
+              <p>Complete season pass unlock, limited edition avatar frame, and 2x XP boost!</p>
+              <div class="price-tag">$29.99</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="g-footer">
+    <div class="container fx-row fx-c-center">
+      <div class="copyright not-rtl">Copyright © 2021 WEJOY PTE. LTD. All Rights Reserved.</div>
+      <div class="navs fx-1 fx-row fx-c-center">
+        <a href="#legal" class="legal-link">Legal documents</a>
+      </div>
+      <div class="platform fx-row fx-c-center">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="facebook-link">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

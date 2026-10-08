@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protection of Minors - WePlay</title>
+  <link rel="icon" type="image/png" href="../assets/images/logo.png">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    body {
+      background: #f4fbf9;
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .banner-header {
+      margin-top: 72px;
+      background: linear-gradient(135deg, #2ad4ab 0%, #67efc4 100%);
+      padding: 48px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      color: #0b4f3e;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #064032;
+      text-align: center;
+      max-width: 540px;
+      line-height: 1.25;
+    }
+
+    .judge-avatar {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 16px rgba(0,0,0,0.12));
+    }
+
+    .info-page-container {
+      max-width: 960px;
+      margin: -24px auto 80px auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(42, 212, 171, 0.08);
+    }
+
+    .card-label {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0f382c;
+      margin-bottom: 14px;
+    }
+
+    .card-text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: #4a5568;
+    }
+
+    .topup-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #ff9f1c 0%, #ff8000 100%);
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(255, 128, 0, 0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="g-header">
+    <div class="container fx-row fx-c-center">
+      <div class="logo fx-row fx-c-center" onclick="window.location.href='../index.html'">
+        <img src="../assets/images/logo.png" alt="WePlay Icon" class="logo-icon">
+        <img src="../assets/images/weplay-name.png" alt="WePlay Logo" class="logo-text">
+      </div>
+
+      <div class="menus fx-1 fx-row fx-c-center">
+        <a href="about-us.html" class="menu-item">about Us</a>
+        <a href="contribute-songs.html" class="menu-item">Contribute songs</a>
+        <div class="menu-item dropdown">
+          <span>Media Information</span>
+          <svg class="dropdown-icon" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          <div class="dropdown-menu">
+            <a href="press-releases.html" class="dropdown-item">Press Releases</a>
+            <a href="brand-assets.html" class="dropdown-item">Brand Assets</a>
+            <a href="latest-news.html" class="dropdown-item">Latest News</a>
+          </div>
+        </div>
+        <a href="protection-of-minors.html" class="menu-item" style="color: #00bfd8; font-weight: 700;">Protection of minors</a>
+      </div>
+
+      <div class="actions fx-row fx-c-center" style="gap: 12px;">
+        <a href="../index.html" class="topup-btn">
+          <span>💳</span>
+          <span>top up</span>
+        </a>
+        <button class="region-btn" type="button">
+          <img src="../assets/images/globe-icon.png" alt="Globe" class="globe-icon-img">
+          <span>Macao</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner Header -->
+  <div class="banner-header">
+    <svg class="judge-avatar" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="56" fill="#00bfd8" />
+      <circle cx="44" cy="50" r="7" fill="#fff" />
+      <circle cx="76" cy="50" r="7" fill="#fff" />
+      <circle cx="44" cy="50" r="3.5" fill="#111" />
+      <circle cx="76" cy="50" r="3.5" fill="#111" />
+      <path d="M 45 75 Q 60 88 75 75" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" />
+      <!-- Judge wig & gavel -->
+      <path d="M 20 40 Q 60 10 100 40 L 95 65 L 25 65 Z" fill="#ffffff" stroke="#e0e0e0" stroke-width="2" />
+      <rect x="85" y="60" width="22" height="12" rx="3" fill="#8b4513" />
+      <rect x="93" y="70" width="6" height="24" rx="2" fill="#8b4513" />
+    </svg>
+    <h1 class="banner-title">WePlay Minor Protection Program</h1>
+  </div>
+
+  <!-- Page Content -->
+  <main class="info-page-container">
+    <div class="glass-card">
+      <h2 class="card-label">Mandatory age verification</h2>
+      <p class="card-text">Registration requires the user to fill in their birthdate, and there are strict restrictions on changing the rules to ensure the information is accurate. This, combined with multiple system protection mechanisms, safeguards the online environment for minors.</p>
+    </div>
+
+    <div class="glass-card">
+      <h2 class="card-label">Real-name Authentication & Anti-Addiction System</h2>
+      <p class="card-text">WePlay enforces strict time limits and spending caps for underage players in compliance with global minor protection guidelines. Nighttime gaming restrictions are automatically enforced to promote healthy digital habits.</p>
+    </div>
+
+    <div class="glass-card">
+      <h2 class="card-label">24/7 Content Moderation & Parental Controls</h2>
+      <p class="card-text">AI-powered text and voice filtering prevents toxic behavior, cyberbullying, and inappropriate content sharing. Parents can request account restrictions or monitoring assistance by reaching out to support@wejoysg.com.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="g-footer">
+    <div class="container fx-row fx-c-center">
+      <div class="copyright">Copyright © 2021 WEJOY PTE. LTD. All Rights Reserved.</div>
+      <div class="navs fx-1 fx-row fx-c-center" style="margin-left: 24px;">
+        <a href="legal-documents.html" class="legal-link">Legal documents</a>
+      </div>
+      <div class="platform fx-row fx-c-center">
+        <a href="https://www.facebook.com" target="_blank" class="facebook-link">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

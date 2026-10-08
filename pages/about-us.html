@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>about Us - WePlay</title>
+  <link rel="icon" type="image/png" href="../assets/images/logo.png">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e6f9fc 0%, #f0fafc 50%, #eaf8fb 100%);
+      min-height: 100vh;
+      position: relative;
+    }
+    
+    /* Background Character Illustration Accent */
+    .bg-accent-illustration {
+      position: fixed;
+      right: 0;
+      top: 72px;
+      bottom: 64px;
+      width: 45%;
+      background: linear-gradient(120deg, rgba(0, 210, 236, 0.15) 0%, rgba(0, 191, 216, 0.25) 100%);
+      clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .info-page-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 104px 24px 100px 24px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .info-card-full {
+      grid-column: 1 / -1;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 32px 36px;
+      box-shadow: 0 10px 30px rgba(0, 186, 214, 0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(0, 186, 214, 0.1);
+    }
+
+    .card-label {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 12px;
+      text-transform: lowercase;
+    }
+
+    .card-label::first-letter {
+      text-transform: uppercase;
+    }
+
+    .card-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555555;
+    }
+
+    .operator-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #1a202c;
+      font-weight: 700;
+      font-size: 17px;
+    }
+
+    .topup-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #ff9f1c 0%, #ff8000 100%);
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(255, 128, 0, 0.25);
+      transition: transform 0.2s;
+    }
+
+    .topup-btn:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="g-header">
+    <div class="container fx-row fx-c-center">
+      <div class="logo fx-row fx-c-center" onclick="window.location.href='../index.html'">
+        <img src="../assets/images/logo.png" alt="WePlay Icon" class="logo-icon">
+        <img src="../assets/images/weplay-name.png" alt="WePlay Logo" class="logo-text">
+      </div>
+
+      <div class="menus fx-1 fx-row fx-c-center">
+        <a href="about-us.html" class="menu-item" style="color: #00bfd8; font-weight: 700;">about Us</a>
+        <a href="contribute-songs.html" class="menu-item">Contribute songs</a>
+        <div class="menu-item dropdown">
+          <span>Media Information</span>
+          <svg class="dropdown-icon" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          <div class="dropdown-menu">
+            <a href="press-releases.html" class="dropdown-item">Press Releases</a>
+            <a href="brand-assets.html" class="dropdown-item">Brand Assets</a>
+            <a href="latest-news.html" class="dropdown-item">Latest News</a>
+          </div>
+        </div>
+        <a href="protection-of-minors.html" class="menu-item">Protection of minors</a>
+      </div>
+
+      <div class="actions fx-row fx-c-center" style="gap: 12px;">
+        <a href="../index.html" class="topup-btn">
+          <span>💳</span>
+          <span>top up</span>
+        </a>
+        <button class="region-btn" type="button">
+          <img src="../assets/images/globe-icon.png" alt="Globe" class="globe-icon-img">
+          <span>Macao</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Background Theme Illustration -->
+  <div class="bg-accent-illustration"></div>
+
+  <!-- Page Content -->
+  <main class="info-page-container">
+    <div class="info-grid">
+      
+      <!-- Card 1: Mission -->
+      <div class="glass-card info-card-full">
+        <h2 class="card-label">mission</h2>
+        <p class="card-text">Bringing joy and friends to young people around the world</p>
+      </div>
+
+      <!-- Card 2: Vision -->
+      <div class="glass-card info-card-full">
+        <h2 class="card-label">Vision</h2>
+        <p class="card-text">By bringing people together through games, we are leading a global trend in online social entertainment.</p>
+      </div>
+
+      <!-- Card 3: Business Operators -->
+      <div class="glass-card">
+        <div class="operator-link">
+          <span>Business operators</span>
+          <span>&gt;</span>
+        </div>
+        <p class="card-text" style="margin-top: 8px; font-weight: 600; color: #333;">WEJOY PTE. LTD.</p>
+      </div>
+
+      <!-- Card 4: Contact Us -->
+      <div class="glass-card">
+        <h2 class="card-label" style="font-size: 18px; margin-bottom: 8px;">Contact Us</h2>
+        <p class="card-text" style="color: #00bfd8; font-weight: 600;">support@wejoysg.com</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="g-footer">
+    <div class="container fx-row fx-c-center">
+      <div class="copyright">Copyright © 2021 WEJOY PTE. LTD. All Rights Reserved.</div>
+      <div class="navs fx-1 fx-row fx-c-center" style="margin-left: 24px;">
+        <a href="legal-documents.html" class="legal-link">Legal documents</a>
+      </div>
+      <div class="platform fx-row fx-c-center">
+        <a href="https://www.facebook.com" target="_blank" class="facebook-link">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

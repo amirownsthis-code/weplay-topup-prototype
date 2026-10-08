@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WePlay - Web Recharge & Stored Gold Coins</title>
+  
+  <!-- WePlay Favicon for browser tab and address bar -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="shortcut icon" type="image/png" href="assets/images/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       Fixed Top Header (Height: 80px)
+       ===================================================================== -->
+  <header class="g-header">
+    <nav class="container fx-row fx-c-center transparent">
+      <!-- WePlay Brand Logo -->
+      <div class="logo fx-row fx-c-center" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <img src="assets/images/logo.png" alt="WePlay Icon" class="logo-icon">
+        <img src="assets/images/weplay-name.png" alt="WePlay Logo" class="logo-text">
+      </div>
+
+      <!-- Navigation Menus -->
+      <div class="menus fx-1 fx-row fx-c-center">
+        <a href="pages/about-us.html" class="menu-item">about Us</a>
+        <a href="pages/contribute-songs.html" class="menu-item">Contribute songs</a>
+        <div class="menu-item dropdown">
+          <span>Media Information</span>
+          <svg class="dropdown-icon" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+          <div class="dropdown-menu">
+            <a href="pages/press-releases.html" class="dropdown-item">Press Releases</a>
+            <a href="pages/brand-assets.html" class="dropdown-item">Brand Assets</a>
+            <a href="pages/latest-news.html" class="dropdown-item">Latest News</a>
+          </div>
+        </div>
+        <a href="pages/protection-of-minors.html" class="menu-item">Protection of minors</a>
+      </div>
+
+      <!-- Region Selector Action with Dropdown Popup -->
+      <div class="actions fx-row fx-c-center">
+        <div class="region-btn-wrapper">
+          <button class="region-btn" type="button" id="regionBtn" aria-label="Select Region">
+            <img src="assets/images/globe-icon.png" alt="Globe" class="globe-icon-img">
+            <span id="selectedRegionText">🇺🇸 America (USA)</span>
+          </button>
+          
+          <!-- Smooth Region Dropdown Popup -->
+          <div class="region-dropdown" id="regionDropdown">
+            <div class="region-option active" data-region="USA">🇺🇸 America (USA)</div>
+            <div class="region-option" data-region="Canada">🇨🇦 Canada</div>
+            <div class="region-option" data-region="Pakistan">🇵🇰 Pakistan</div>
+            <div class="region-option" data-region="India">🇮🇳 India</div>
+            <div class="region-option" data-region="China">🇨🇳 China</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =====================================================================
+       Main Content (#recharge .main)
+       Divided into two sections: .left.card and .right.card
+       Both scrollable in their own region
+       ===================================================================== -->
+  <main id="recharge" class="main">
+    <div class="recharge-wrapper">
+
+      <!-- =================================================================
+           LEFT CARD (.left.card) - Width: ~280px
+           Contains user profile, clickable page tabs, advertiser banner, gift pack
+           ================================================================= -->
+      <aside class="left card" id="leftCard">
+        
+        <!-- User Profile Box -->
+        <div class="user-profile">
+          <div class="user-avatar-wrap" id="userAvatarWrap" title="User Avatar">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="60" r="60" fill="#ff8fa3" />
+              <path d="M 60 14 C 52 32 38 68 38 88 C 38 106 82 106 82 88 C 82 68 68 32 60 14 Z" fill="#ff768e" />
+              <ellipse cx="53" cy="50" rx="6.5" ry="9.5" fill="#ffffff" stroke="#222" stroke-width="1.6" />
+              <ellipse cx="67" cy="50" rx="6.5" ry="9.5" fill="#ffffff" stroke="#222" stroke-width="1.6" />
+              <ellipse cx="54" cy="51" rx="3" ry="4" fill="#111" />
+              <ellipse cx="66" cy="51" rx="3" ry="4" fill="#111" />
+              <path d="M 47 38 Q 52 35 56 39" fill="none" stroke="#601826" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M 64 39 Q 68 35 73 38" fill="none" stroke="#601826" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M 48 68 Q 60 84 72 68 Z" fill="#6d1b2a" stroke="#222" stroke-width="1.5" />
+              <ellipse cx="60" cy="74" rx="7" ry="4" fill="#ff5277" />
+              <circle cx="43" cy="62" r="4.5" fill="#ff5277" opacity="0.45" />
+              <circle cx="77" cy="62" r="4.5" fill="#ff5277" opacity="0.45" />
+            </svg>
+          </div>
+          <div class="user-info">
+            <div class="user-name-row">
+              <span class="user-name" id="userNameDisplay">Wu Chen</span>
+              <button class="switch-account-btn" id="switchAccountBtn" title="Switch Account">⇄</button>
+            </div>
+            <div class="user-id" id="userIdDisplay">ID: wuchen</div>
+          </div>
+        </div>
+
+        <!-- Left Navigation Menu (Pages of Currencies & Cards) -->
+        <nav class="left-nav-menu" aria-label="Store Categories">
+          <button class="nav-page-btn active" data-tab="stored-gold-coins">
+            Stored Gold Coins
+          </button>
+          <button class="nav-page-btn" data-tab="become-member">
+            Become a member
+          </button>
+          <button class="nav-page-btn" data-tab="purchase-red-envelopes">
+            Purchase red envelopes
+          </button>
+          <button class="nav-page-btn" data-tab="game-card-upgrade-advance">
+            Game Card Upgrade
+          </button>
+          <button class="nav-page-btn" data-tab="game-card-upgrade-deluxe">
+            Game Card Upgrade
+          </button>
+        </nav>
+
+        <!-- Advertiser Bar (Smooth Carousel: bar-1 & bar-2) -->
+        <div class="advertiser-section">
+          <div class="advertiser-bar" id="advertiserBar" title="Special Offers">
+            <div class="banner-track" id="bannerTrack">
+              <div class="banner-slide">
+                <img src="assets/images/bar-1.png" alt="WePlay Event Banner 1">
+              </div>
+              <div class="banner-slide">
+                <img src="assets/images/bar-2.webp" alt="WePlay Event Banner 2">
+              </div>
+            </div>
+            <div class="banner-dots" id="bannerDots"></div>
+          </div>
+        </div>
+
+        <!-- Gift Pack Section: Gift Box on top, countdown timer underneath (No hardcoded Chinese text) -->
+        <div class="gift-pack-section">
+          <div class="gift-pack-icon-wrap" title="Special Gift Pack">
+            <img src="assets/images/gift-box.png" alt="Special Gift Box" class="gift-box-img">
+          </div>
+          <div class="gift-pack-timer" id="packTimer">95:22:46</div>
+        </div>
+
+      </aside>
+
+      <!-- =================================================================
+           RIGHT CARD (.right.card) - Width: ~540px
+           Compact, does not over-stretch
+           Scrollable independently
+           ================================================================= -->
+      <section class="right card" id="rightCard">
+        
+        <!-- PAGE VIEW 1: Stored Gold Coins (Main Home Page) -->
+        <div class="page-view active" id="view-stored-gold-coins">
+          
+          <!-- Packages List (7 Coin Packages) -->
+          <div class="packages-list" id="goldCoinsList">
+            <!-- Rendered dynamically by script.js with data/packages.json -->
+          </div>
+
+          <!-- Stored Value Pipeline (Payment Methods) -->
+          <div class="payment-section">
+            <h3 class="section-title">Stored Value Pipeline</h3>
+            <div class="payment-grid" id="paymentGrid">
+              <!-- Rendered dynamically by script.js with data/payment-methods.json -->
+            </div>
+          </div>
+
+          <!-- Bill Mailbox Section -->
+          <div class="bill-mailbox-section">
+            <div class="bill-mailbox-header">
+              <span class="bill-mailbox-title">Bill mailbox</span>
+              <span class="bill-reward-tag">Get coins and an avatar frame for your first time filling out the form.</span>
+            </div>
+            
+            <div class="bill-input-row">
+              <button class="bill-placeholder-btn" id="billPlaceholderBtn" type="button">
+                <span>Fill in your email address to receive bills.</span>
+                <span aria-hidden="true">&gt;</span>
+              </button>
+
+              <div class="bill-input-box" id="billInputBox">
+                <input type="email" id="emailInput" class="email-input" placeholder="e.g. user@example.com" autocomplete="email">
+                <button type="button" class="email-save-btn" id="emailSaveBtn">Confirm</button>
+              </div>
+
+              <div class="saved-email-display" id="savedEmailDisplay">
+                <span id="savedEmailText"></span>
+                <button type="button" class="edit-email-btn" id="editEmailBtn">(Edit)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action & Dynamic Price Summary -->
+          <div class="checkout-section">
+            <div class="summary-price-row">
+              <span class="summary-price-label">Price:</span>
+              <span class="summary-price-value" id="summaryPriceVal">$4.99</span>
+            </div>
+            <button class="next-step-btn" id="nextStepBtn" type="button">
+              <span>Next step</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- PAGE VIEW 2: Become a member -->
+        <div class="page-view" id="view-become-member">
+          <!-- Membership Plans Grid (2 Columns as in Reference) -->
+          <div class="member-plans-grid" id="memberPlansGrid">
+            <div class="member-card selected" data-id="member-1month" data-price="7.99" data-name="1-month membership">
+              <h3 class="member-card-title">1-month membership</h3>
+              <div class="member-card-price"><sub>$</sub>7.99</div>
+            </div>
+            <div class="member-card" data-id="member-3month" data-price="21.99" data-name="3-month membership">
+              <h3 class="member-card-title">3-month membership</h3>
+              <div class="member-card-price"><sub>$</sub>21.99</div>
+            </div>
+            <div class="member-card" data-id="member-12month" data-price="89.99" data-name="12-month membership">
+              <h3 class="member-card-title">12-month membership</h3>
+              <div class="member-card-price"><sub>$</sub>89.99</div>
+            </div>
+          </div>
+
+          <!-- Member Privileges Note -->
+          <p class="member-privilege-note">For member privileges, please refer to WePlay App - My - Membership.</p>
+
+          <!-- Stored Value Pipeline (Payment Methods) -->
+          <div class="payment-section">
+            <h3 class="section-title">Stored Value Pipeline</h3>
+            <div class="payment-grid member-payment-grid" id="memberPaymentGrid">
+              <!-- Rendered dynamically by script.js -->
+            </div>
+          </div>
+
+          <!-- Bill Mailbox Section -->
+          <div class="bill-mailbox-section">
+            <div class="bill-mailbox-header">
+              <span class="bill-mailbox-title">Bill mailbox</span>
+              <span class="bill-reward-tag">Get coins and an avatar frame for your first time filling out the form.</span>
+            </div>
+            
+            <div class="bill-input-row">
+              <button class="bill-placeholder-btn" id="memberBillBtn" type="button">
+                <span>Fill in your email address to receive bills.</span>
+                <span aria-hidden="true">&gt;</span>
+              </button>
+
+              <div class="bill-input-box" id="memberBillInputBox">
+                <input type="email" id="memberEmailInput" class="email-input" placeholder="e.g. user@example.com" autocomplete="email">
+                <button type="button" class="email-save-btn" id="memberEmailSaveBtn">Confirm</button>
+              </div>
+
+              <div class="saved-email-display" id="memberSavedEmailDisplay">
+                <span id="memberSavedEmailText"></span>
+                <button type="button" class="edit-email-btn" id="memberEditEmailBtn">(Edit)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action & Dynamic Price Summary -->
+          <div class="checkout-section">
+            <div class="summary-price-row">
+              <span class="summary-price-label">Price:</span>
+              <span class="summary-price-value" id="memberSummaryPriceVal">$7.99</span>
+            </div>
+            <button class="next-step-btn" id="memberNextStepBtn" type="button">
+              <span>Next step</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- PAGE VIEW 3: Purchase red envelopes (Reference Image 3) -->
+        <div class="page-view" id="view-purchase-red-envelopes">
+          <!-- Packages List (3 Red Envelope Packages) -->
+          <div class="packages-list" id="redEnvPackagesList">
+            <div class="package-item selected" data-id="red-3000" data-price="4.99" data-name="3000 Gold Coins Red Packet">
+              <div class="pkg-icon-wrap">
+                <img src="assets/images/one-envelop.png" alt="3000 Gold Coins Red Packet">
+              </div>
+              <div class="pkg-info">
+                <h3 class="pkg-title">3000 Gold Coins Red Packet</h3>
+              </div>
+              <div class="pkg-price">$4.99</div>
+            </div>
+
+            <div class="package-item" data-id="red-10000" data-price="12.99" data-name="10,000 gold coins red envelope">
+              <div class="pkg-icon-wrap">
+                <img src="assets/images/average-envelop.png" alt="10,000 gold coins red envelope">
+              </div>
+              <div class="pkg-info">
+                <h3 class="pkg-title">10,000 gold coins red envelope</h3>
+              </div>
+              <div class="pkg-price">$12.99</div>
+            </div>
+
+            <div class="package-item" data-id="red-50000" data-price="59.99" data-name="50,000 gold coins red envelope">
+              <div class="pkg-icon-wrap">
+                <img src="assets/images/more-coins-envelop.png" alt="50,000 gold coins red envelope">
+              </div>
+              <div class="pkg-info">
+                <h3 class="pkg-title">50,000 gold coins red envelope</h3>
+              </div>
+              <div class="pkg-price">$59.99</div>
+            </div>
+          </div>
+
+          <!-- Note Text -->
+          <p class="member-privilege-note" style="margin-top: 18px; margin-bottom: 24px;">The purchased red envelopes will be stored in your backpack. Please send them within the WePlay App.</p>
+
+          <!-- Quantity Selector -->
+          <div class="quantity-section" style="margin-bottom: 28px;">
+            <h3 class="section-title">Select quantity</h3>
+            <div class="quantity-grid" id="redEnvQtyGrid" style="display: flex; gap: 12px;">
+              <button type="button" class="qty-btn active" data-qty="1">1</button>
+              <button type="button" class="qty-btn" data-qty="5">5</button>
+              <button type="button" class="qty-btn" data-qty="10">10</button>
+            </div>
+          </div>
+
+          <!-- Stored Value Pipeline -->
+          <div class="payment-section">
+            <h3 class="section-title">Stored Value Pipeline</h3>
+            <div class="payment-grid" id="redEnvPaymentGrid">
+              <!-- Rendered dynamically by script.js -->
+            </div>
+          </div>
+
+          <!-- Bill Mailbox Section -->
+          <div class="bill-mailbox-section">
+            <div class="bill-mailbox-header">
+              <span class="bill-mailbox-title">Bill mailbox</span>
+              <span class="bill-reward-tag">Get coins and an avatar frame for your first time filling out the form.</span>
+            </div>
+            
+            <div class="bill-input-row">
+              <button class="bill-placeholder-btn" id="redEnvBillBtn" type="button">
+                <span>Fill in your email address to receive bills.</span>
+                <span aria-hidden="true">&gt;</span>
+              </button>
+
+              <div class="bill-input-box" id="redEnvBillInputBox">
+                <input type="email" id="redEnvEmailInput" class="email-input" placeholder="e.g. user@example.com" autocomplete="email">
+                <button type="button" class="email-save-btn" id="redEnvEmailSaveBtn">Confirm</button>
+              </div>
+
+              <div class="saved-email-display" id="redEnvSavedEmailDisplay">
+                <span id="redEnvSavedEmailText"></span>
+                <button type="button" class="edit-email-btn" id="redEnvEditEmailBtn">(Edit)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action & Dynamic Price Summary -->
+          <div class="checkout-section">
+            <div class="summary-price-row">
+              <span class="summary-price-label">Price:</span>
+              <span class="summary-price-value" id="redEnvSummaryPriceVal">$4.99</span>
+            </div>
+            <button class="next-step-btn" id="redEnvNextStepBtn" type="button">
+              <span>Next step</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- PAGE VIEW 4: Game Card Upgrade - 1st Option (Reference Image 2) -->
+        <div class="page-view" id="view-game-card-upgrade-advance">
+          <!-- Game Card Version Cards (2 Columns) -->
+          <div class="game-card-grid" id="gameCard1Grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px; max-width: 620px;">
+            <div class="game-card-box selected" data-id="gc-advanced" data-price="7.99" data-name="Game Card Advanced Version">
+              <div class="game-card-banner" style="background: #fff9e6; padding: 14px; border-radius: 12px 12px 0 0; display: flex; align-items: center; gap: 8px;">
+                <img src="assets/images/game-card-advance-version.png" alt="Advanced" style="height: 36px;">
+                <span style="font-weight: 700; font-size: 15px; color: #333;">Game Card Advanced Version</span>
+              </div>
+              <div class="game-card-body" style="padding: 20px; text-align: center;">
+                <div style="font-size: 26px; font-weight: 700; color: #fa6400;">$7.99</div>
+              </div>
+            </div>
+
+            <div class="game-card-box" data-id="gc-deluxe" data-price="23.99" data-name="Game Card Deluxe Edition">
+              <div class="game-card-banner" style="background: #f0eafc; padding: 14px; border-radius: 12px 12px 0 0; display: flex; align-items: center; gap: 8px;">
+                <img src="assets/images/game-card-dulex-version.png" alt="Deluxe" style="height: 36px;">
+                <span style="font-weight: 700; font-size: 15px; color: #6b46c1;">Game Card Deluxe Edition</span>
+              </div>
+              <div class="game-card-body" style="padding: 20px; text-align: center;">
+                <div style="font-size: 26px; font-weight: 700; color: #fa6400;">$23.99</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Note Text -->
+          <div class="game-card-notes" style="font-size: 13px; color: #999; line-height: 1.5; margin-bottom: 24px; max-width: 620px;">
+            <p>You can only advance to one version at a time, and the level rewards you unlock require you to reach the corresponding level.</p>
+            <p>For more information about the Play Card, please visit the WePlay App - Homepage - Play Card.</p>
+          </div>
+
+          <!-- Stored Value Pipeline -->
+          <div class="payment-section">
+            <h3 class="section-title">Stored Value Pipeline</h3>
+            <div class="payment-grid" id="gameCard1PaymentGrid">
+              <!-- Rendered dynamically by script.js -->
+            </div>
+          </div>
+
+          <!-- Bill Mailbox Section -->
+          <div class="bill-mailbox-section">
+            <div class="bill-mailbox-header">
+              <span class="bill-mailbox-title">Bill mailbox</span>
+              <span class="bill-reward-tag">Get coins and an avatar frame for your first time filling out the form.</span>
+            </div>
+            
+            <div class="bill-input-row">
+              <button class="bill-placeholder-btn" id="gameCard1BillBtn" type="button">
+                <span>Fill in your email address to receive bills.</span>
+                <span aria-hidden="true">&gt;</span>
+              </button>
+
+              <div class="bill-input-box" id="gameCard1BillInputBox">
+                <input type="email" id="gameCard1EmailInput" class="email-input" placeholder="e.g. user@example.com" autocomplete="email">
+                <button type="button" class="email-save-btn" id="gameCard1EmailSaveBtn">Confirm</button>
+              </div>
+
+              <div class="saved-email-display" id="gameCard1SavedEmailDisplay">
+                <span id="gameCard1SavedEmailText"></span>
+                <button type="button" class="edit-email-btn" id="gameCard1EditEmailBtn">(Edit)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action & Dynamic Price Summary -->
+          <div class="checkout-section">
+            <div class="summary-price-row">
+              <span class="summary-price-label">Price:</span>
+              <span class="summary-price-value" id="gameCard1SummaryPriceVal">$7.99</span>
+            </div>
+            <button class="next-step-btn" id="gameCard1NextStepBtn" type="button">
+              <span>Next step</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- PAGE VIEW 5: Game Card Upgrade - 2nd Option (Reference Image 1) -->
+        <div class="page-view" id="view-game-card-upgrade-deluxe">
+          <!-- Level Upgrade Cards Grid (2 Columns) -->
+          <div class="member-plans-grid" id="gameCard2Grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 24px; max-width: 620px;">
+            <div class="member-card selected" data-id="level-10" data-price="11.99" data-name="Level 10">
+              <h3 class="member-card-title">Level 10</h3>
+              <div class="member-card-price"><sub>$</sub>11.99</div>
+            </div>
+            <div class="member-card" data-id="level-50" data-price="59.99" data-name="Level 50">
+              <h3 class="member-card-title">Level 50</h3>
+              <div class="member-card-price"><sub>$</sub>59.99</div>
+            </div>
+          </div>
+
+          <!-- Stored Value Pipeline -->
+          <div class="payment-section">
+            <h3 class="section-title">Stored Value Pipeline</h3>
+            <div class="payment-grid" id="gameCard2PaymentGrid">
+              <!-- Rendered dynamically by script.js -->
+            </div>
+          </div>
+
+          <!-- Bill Mailbox Section -->
+          <div class="bill-mailbox-section">
+            <div class="bill-mailbox-header">
+              <span class="bill-mailbox-title">Bill mailbox</span>
+              <span class="bill-reward-tag">Get coins and an avatar frame for your first time filling out the form.</span>
+            </div>
+            
+            <div class="bill-input-row">
+              <button class="bill-placeholder-btn" id="gameCard2BillBtn" type="button">
+                <span>Fill in your email address to receive bills.</span>
+                <span aria-hidden="true">&gt;</span>
+              </button>
+
+              <div class="bill-input-box" id="gameCard2BillInputBox">
+                <input type="email" id="gameCard2EmailInput" class="email-input" placeholder="e.g. user@example.com" autocomplete="email">
+                <button type="button" class="email-save-btn" id="gameCard2EmailSaveBtn">Confirm</button>
+              </div>
+
+              <div class="saved-email-display" id="gameCard2SavedEmailDisplay">
+                <span id="gameCard2SavedEmailText"></span>
+                <button type="button" class="edit-email-btn" id="gameCard2EditEmailBtn">(Edit)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action & Dynamic Price Summary -->
+          <div class="checkout-section">
+            <div class="summary-price-row">
+              <span class="summary-price-label">Price:</span>
+              <span class="summary-price-value" id="gameCard2SummaryPriceVal">$11.99</span>
+            </div>
+            <button class="next-step-btn" id="gameCard2NextStepBtn" type="button">
+              <span>Next step</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =====================================================================
+       Fixed Bottom Footer (Height: 80px)
+       ===================================================================== -->
+  <footer class="g-footer">
+    <div class="container fx-row fx-c-center">
+      <div class="copyright not-rtl">Copyright © 2021 WEJOY PTE. LTD. All Rights Reserved.</div>
+      <div class="navs fx-1 fx-row fx-c-center">
+        <a href="pages/legal-documents.html" class="legal-link">Legal documents</a>
+      </div>
+      <div class="platform fx-row fx-c-center">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="facebook-link" aria-label="WePlay Facebook Page">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       Payment Gateway Modal & Success Receipt (Reference Image 1)
+       ===================================================================== -->
+  <div class="pay-modal-overlay" id="paymentModal">
+    <div class="pay-modal-container" role="dialog" aria-modal="true">
+      
+      <!-- VIEW 1: Checkout & Payment Form (Image 1) -->
+      <div class="pay-view-checkout" id="payViewCheckout">
+        
+        <!-- Left Side: Order Summary & Info -->
+        <div class="pay-left-panel">
+          <div class="pay-left-top">
+            <div class="pay-brand">
+              <img src="assets/images/logo.png" alt="WePlay" class="pay-logo-icon">
+              <span class="pay-brand-name">WePlay</span>
+            </div>
+            <div class="pay-top-actions">
+              <div class="pay-lang-pill" id="payLangPill">
+                <span id="payLangRegionText">MY ENGLISH</span>
+                <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <button type="button" class="pay-close-btn" id="payCloseBtn" aria-label="Close">&times;</button>
+            </div>
+          </div>
+
+          <div class="pay-summary-content">
+            <div class="pay-item-title" id="paySummaryItemTitle">500000 Syiling</div>
+            <div class="pay-big-price" id="paySummaryBigPrice">RM 2,500.00</div>
+          </div>
+
+          <div class="pay-left-bottom">
+            <div class="pay-details-toggle" id="payDetailsToggle">
+              <span>Details</span>
+              <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" id="payDetailsArrow">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="pay-details-dropdown" id="payDetailsDropdown">
+              <div class="pay-detail-row">
+                <span>Account ID</span>
+                <strong id="payDetailUserId">wuchen_p</strong>
+              </div>
+              <div class="pay-detail-row">
+                <span>Account Nickname</span>
+                <strong id="payDetailUserName">5X</strong>
+              </div>
+              <div class="pay-detail-row">
+                <span>Billing Email</span>
+                <strong id="payDetailEmail">Not provided</strong>
+              </div>
+            </div>
+            <div class="pay-tx-id" id="payTxId">T2026092520942969214051</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Interactive Payment Methods Form -->
+        <div class="pay-right-panel">
+          <div class="pay-method-header">
+            <div class="pay-method-icon-wrap" id="payMethodHeaderIcon">
+              <img src="assets/images/visa-card.png" id="payMethodHeaderImg" alt="Payment Method" class="pay-header-card-img">
+            </div>
+            <span class="pay-method-header-title" id="payMethodHeaderTitle">Credit/Debit Card</span>
+          </div>
+
+          <!-- Card Form (VISA / Mastercard) -->
+          <div class="pay-card-box" id="payCardBox">
+            <div class="pay-card-top-row">
+              <span class="pay-card-box-title">Pay With New Card</span>
+              <div class="pay-card-brand-logos">
+                <img src="assets/images/visa-card.png" alt="VISA" class="pay-mini-brand-img" title="VISA">
+                <img src="assets/images/mastercard.png" alt="Mastercard" class="pay-mini-brand-img" title="Mastercard">
+              </div>
+            </div>
+
+            <div class="pay-input-group">
+              <input type="text" id="payCardNumber" class="pay-form-input" placeholder="Card Number" maxlength="19" autocomplete="cc-number">
+            </div>
+
+            <div class="pay-input-row">
+              <div class="pay-input-group" style="flex: 1;">
+                <input type="text" id="payCardExpiry" class="pay-form-input" placeholder="Expiry Date" maxlength="5" autocomplete="cc-exp">
+              </div>
+              <div class="pay-input-group" style="flex: 1; position: relative;">
+                <input type="password" id="payCardCvv" class="pay-form-input" placeholder="CVV/CVC" maxlength="4" autocomplete="cc-csc">
+                <span class="pay-cvv-icon" title="3 or 4 digit code on card back">💳</span>
+              </div>
+            </div>
+
+            <div class="pay-input-group">
+              <input type="text" id="payCardHolder" class="pay-form-input" placeholder="Cardholder Name" autocomplete="cc-name">
+            </div>
+
+            <label class="pay-checkbox-label">
+              <input type="checkbox" id="paySaveCardCheck" checked>
+              <span>Save card securely for future payments</span>
+            </label>
+
+            <div class="pay-security-badge">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="#16a34a">
+                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>100% data security comply with PCI-DSS & 3D Secure</span>
+            </div>
+
+            <button type="button" class="pay-submit-btn" id="paySubmitBtn">
+              <span id="paySubmitBtnText">Pay RM 2,500.00</span>
+            </button>
+
+            <div class="pay-terms-footer">
+              Continue as accepting <a href="pages/legal-documents.html" target="_blank">Terms of Use</a> & <a href="pages/legal-documents.html" target="_blank">Privacy Policy</a>
+            </div>
+          </div>
+
+          <!-- Alternative Wallet Form (Apple Pay / Google Pay) -->
+          <div class="pay-wallet-box" id="payWalletBox" style="display: none;">
+            <div class="pay-wallet-icon-wrap" id="payWalletIcon"></div>
+            <h4 class="pay-wallet-title" id="payWalletTitle">Apple Pay</h4>
+            <p class="pay-wallet-desc">Fast, secure 1-click checkout with your verified digital wallet.</p>
+            <button type="button" class="pay-wallet-btn" id="payWalletBtn">
+              <span id="payWalletBtnText">Pay with Apple Pay</span>
+            </button>
+            <div class="pay-terms-footer" style="margin-top: 24px;">
+              Protected by biometric tokenized encryption.
+            </div>
+          </div>
+
+          <!-- Floating Support Bubble -->
+          <div class="pay-support-bubble" title="Need help?" onclick="alert('WePlay Customer Support is available 24/7 via the in-app help center.');">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="#444">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-9 12h-2v-2h2v2zm0-4h-2V6h2v4z"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- VIEW 2: Congratulations & Payment Receipt -->
+      <div class="pay-view-receipt" id="payViewReceipt" style="display: none;">
+        <div class="receipt-success-icon-wrap">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="#16a34a">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+        <h2 class="receipt-title">Payment Successful!</h2>
+        <p class="receipt-subtitle">Your coins have been deposited into your WePlay account.</p>
+
+        <div class="receipt-card">
+          <div class="receipt-row">
+            <span class="receipt-label">Transaction ID</span>
+            <span class="receipt-val" id="receiptTxId">T2026092520942969214051</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-label">Player Account</span>
+            <span class="receipt-val" id="receiptPlayer">Wu Chen (wuchen_p)</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-label">Item Purchased</span>
+            <span class="receipt-val" id="receiptItem">500,000 Gold Coins</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-label">Payment Method</span>
+            <span class="receipt-val" id="receiptMethod">VISA Card</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-label">Paid Amount</span>
+            <span class="receipt-val highlight" id="receiptAmount">RM 2,500.00</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-label">Date & Time</span>
+            <span class="receipt-val" id="receiptDate">2026-09-26 01:50</span>
+          </div>
+        </div>
+
+        <button type="button" class="receipt-done-btn" id="receiptDoneBtn">Return to Store</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       "How to get a user ID?" Modal Popup (Reference Image 2)
+       ===================================================================== -->
+  <div class="id-help-modal-overlay" id="howToGetIdModal">
+    <div class="id-help-card">
+      <button type="button" class="id-help-close-btn" id="idHelpCloseBtn" aria-label="Close">&times;</button>
+      
+      <h3 class="id-help-title">How to get a user ID?</h3>
+      
+      <div class="id-help-steps-row">
+        <div class="id-help-step-col">
+          <span class="id-help-step-text">1. Activate the WePlay App, go to the "Me" page, click on Profile.</span>
+        </div>
+        <div class="id-help-step-col">
+          <span class="id-help-step-text">2. Click to copy user ID.</span>
+        </div>
+      </div>
+
+      <div class="id-help-img-wrap">
+        <img src="assets/images/find-id.png" alt="How to get WePlay user ID" class="id-help-img">
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       WePlay Initial Login / Account Verification Modal Overlay (Images 1, 2, 3)
+       ===================================================================== -->
+  <div class="login-overlay open" id="loginOverlay">
+    <div class="login-card-container">
+      
+      <!-- STEP 1: Enter ID / Scan QR Code (Reference Image 1 & 3) -->
+      <div class="login-step" id="loginStep1">
+        <h2 class="login-card-title" id="loginStep1Title">Enter your WePlay ID</h2>
+        
+        <!-- Tab Switcher Pills -->
+        <div class="login-tab-switcher">
+          <button type="button" class="login-tab-btn" id="tabScanLogin">Scan code to login</button>
+          <button type="button" class="login-tab-btn active" id="tabEnterAccount">Enter your WePlay ID</button>
+        </div>
+
+        <!-- Tab Content 1: Scan to log in (QR Code Image 3) -->
+        <div class="login-tab-content" id="contentScanLogin" style="display: none; text-align: center; padding: 12px 0;">
+          <div class="qr-box" style="display: inline-block; padding: 12px; border: 1px solid #eaeaea; border-radius: 16px; background: #fff;">
+            <img src="assets/images/qr-code.png" alt="WePlay QR Code" style="width: 180px; height: 180px; object-fit: contain; display: block;">
+          </div>
+          <div style="margin-top: 16px;">
+            <a href="#help-qr" class="cyan-link-text" id="openQrHelpBtn">How do I scan the QR code?</a>
+          </div>
+        </div>
+
+        <!-- Tab Content 2: Enter your WePlay account (Image 1) -->
+        <div class="login-tab-content" id="contentEnterAccount" style="display: block;">
+          <div class="login-input-wrap">
+            <input type="text" id="loginUserIdInput" class="login-id-input" placeholder="Enter your WePlay ID" autocomplete="off">
+            <div class="login-error-msg" id="loginErrorMsg">user doesn't exist</div>
+          </div>
+          
+          <div style="margin-top: 14px; text-align: center;">
+            <a href="#help-id" class="cyan-link-text" id="openIdHelpBtn">How to get user ID?</a>
+          </div>
+
+          <button type="button" class="login-next-btn" id="loginNextBtn">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Verify Top-up Account (Reference Image media_1790370972926.png) -->
+      <div class="login-step" id="loginStep2" style="display: none; flex-direction: column; text-align: center; flex: 1;">
+        <h2 class="login-card-title">Please verify your top-up account.</h2>
+        
+        <div class="confirm-user-info-box">
+          <div class="confirm-user-avatar-wrap">
+            <img src="assets/images/logo.png" id="confirmUserAvatarImg" alt="User Avatar">
+          </div>
+          <div class="confirm-user-name" id="confirmUserName">5X</div>
+          <div class="confirm-user-value" id="confirmUserValue">Captivity Value:0</div>
+        </div>
+
+        <div style="flex:1;"></div>
+
+        <div class="confirm-actions-row">
+          <button type="button" class="confirm-btn cancel" id="confirmCancelBtn">Cancelled</button>
+          <button type="button" class="confirm-btn confirm" id="confirmOkBtn">Certain</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+{
+  "goldCoins": [
+    {
+      "id": "coins-3000",
+      "coins": "3000 gold coins",
+      "icon": "assets/images/single-coin.png",
+      "description": "Obtain \"Q Version Levi Gift Card\" x1, up to 810 gold coins.",
+      "price": 4.99,
+      "currency": "$",
+      "badge": null,
+      "selected": true
+    },
+    {
+      "id": "coins-10000",
+      "coins": "10,000 gold coins",
+      "icon": "assets/images/medium-coins.png",
+      "description": "Obtain \"Q Version Mikasa Gift Card\" x1, up to 2800 coins.",
+      "price": 12.99,
+      "currency": "$",
+      "badge": null,
+      "selected": false
+    },
+    {
+      "id": "coins-50000",
+      "coins": "50,000 gold coins",
+      "icon": "assets/images/more-coins.png",
+      "description": "Obtain \"Q Version Allen Gift Card\" x1, up to 15,000 gold coins.",
+      "price": 59.99,
+      "currency": "$",
+      "badge": "×1",
+      "selected": false
+    },
+    {
+      "id": "coins-100000",
+      "coins": "100,000 gold coins",
+      "icon": "assets/images/coins-tresure.png",
+      "description": "Obtain 2 \"Q Version Allen Gift Cards\" and you can get up to 30,000 gold coins.",
+      "price": 120,
+      "currency": "$",
+      "badge": "×2",
+      "selected": false
+    },
+    {
+      "id": "coins-250000",
+      "coins": "250,000 gold coins",
+      "icon": "assets/images/coins-tresure.png",
+      "description": "Obtain 5 \"Q Version Allen Gift Cards\" and you can get up to 75,000 gold coins.",
+      "price": 300,
+      "currency": "$",
+      "badge": "×5",
+      "selected": false
+    },
+    {
+      "id": "coins-500000",
+      "coins": "500,000 gold coins",
+      "icon": "assets/images/coins-tresure.png",
+      "description": "Obtain 10 \"Q Version Allen Gift Cards\" and you can get up to 150,000 gold coins.",
+      "price": 600,
+      "currency": "$",
+      "badge": "×10",
+      "selected": false
+    },
+    {
+      "id": "coins-1000000",
+      "coins": "1 million gold coins",
+      "icon": "assets/images/coins-tresure.png",
+      "description": "Obtain 20 \"Q Version Allen Gift Cards\" and you can get up to 300,000 gold coins.",
+      "price": 1200,
+      "currency": "$",
+      "badge": "×20",
+      "selected": false
+    }
+  ],
+  "memberPlans": [
+    {
+      "id": "member-1month",
+      "name": "1-month membership",
+      "price": 7.99,
+      "currency": "$",
+      "selected": true
+    },
+    {
+      "id": "member-3month",
+      "name": "3-month membership",
+      "price": 21.99,
+      "currency": "$",
+      "selected": false
+    },
+    {
+      "id": "member-12month",
+      "name": "12-month membership",
+      "price": 89.99,
+      "currency": "$",
+      "selected": false
+    }
+  ],
+  "redEnvelopes": [
+    {
+      "id": "envelope-single",
+      "name": "Single Lucky Red Envelope",
+      "icon": "assets/images/one-envelop.png",
+      "description": "Send greetings and share up to 1,000 gold coins in party rooms!",
+      "price": 1.99,
+      "currency": "$"
+    },
+    {
+      "id": "envelope-average",
+      "name": "Festive Red Envelope Bundle",
+      "icon": "assets/images/average-envelop.png",
+      "description": "Share lucky packets with up to 10 party members with custom greeting!",
+      "price": 9.99,
+      "currency": "$"
+    },
+    {
+      "id": "envelope-more",
+      "name": "Grand Celebration Envelope",
+      "icon": "assets/images/more-coins-envelop.png",
+      "description": "Broadcast an all-server red envelope shower with special entrance effects!",
+      "price": 29.99,
+      "currency": "$"
+    }
+  ],
+  "gameCards": [
+    {
+      "id": "card-advance",
+      "name": "Advance Game Card Upgrade",
+      "icon": "assets/images/game-card-advance-version.png",
+      "description": "Unlock advanced game pass rewards, premium card back and level boosters!",
+      "price": 14.99,
+      "currency": "$"
+    },
+    {
+      "id": "card-deluxe",
+      "name": "Deluxe Game Card Upgrade",
+      "icon": "assets/images/game-card-dulex-version.png",
+      "description": "Complete season pass unlock, limited edition avatar frame, and 2x XP boost!",
+      "price": 29.99,
+      "currency": "$"
+    }
+  ]
+}
